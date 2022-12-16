@@ -1,4 +1,5 @@
 import 'package:carpto/home.dart';
+import 'package:carpto/wrapper.dart';
 import 'package:flutter/material.dart';
 
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: Home(),
+      home: Wrapper(),
     );
   }
 }

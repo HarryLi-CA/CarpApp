@@ -20,28 +20,30 @@ class Home extends StatelessWidget {
               new ProfilePage(),
             ],
           ),
-          bottomNavigationBar: new TabBar(
-            tabs: [
-              Tab(
-                icon: new Icon(Icons.home),
-              ),
-              Tab(
-                icon: new Icon(Icons.person_search),
-              ),
-              Tab(
-                icon: new Icon(Icons.add_to_photos_rounded),
-              ),
-              Tab(
-                icon: new Icon(Icons.account_circle_rounded),
-              ),
-            ],
-            labelColor: Colors.yellow,
-            unselectedLabelColor: Colors.white,
-            indicatorSize: TabBarIndicatorSize.label,
-            indicatorPadding: EdgeInsets.all(5.0),
-            indicatorColor: Colors.yellow,
-          ),
-          backgroundColor: Colors.grey[900],
+          bottomNavigationBar: new Material(
+            color: Colors.green,
+            child: TabBar(tabs: [
+                Tab(
+                  icon: new Icon(Icons.home),
+                ),
+                Tab(
+                  icon: new Icon(Icons.person_search),
+                ),
+                Tab(
+                  icon: new Icon(Icons.add_to_photos_rounded),
+                ),
+                Tab(
+                  icon: new Icon(Icons.account_circle_rounded),
+                ),
+              ],
+              labelColor: Colors.black,
+              unselectedLabelColor: Colors.white,
+              indicatorSize: TabBarIndicatorSize.label,
+              indicatorPadding: EdgeInsets.all(5.0),
+              indicatorColor: Colors.green,
+            ),
+        ),
+        backgroundColor: Colors.green.shade50,
         ),
       );
   }
