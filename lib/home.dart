@@ -2,7 +2,6 @@ import 'package:carpto/screens/home/homepage.dart';
 import 'package:carpto/screens/post/postpage.dart';
 import 'package:carpto/screens/profile/profilepage.dart';
 import 'package:carpto/screens/search/searchpage.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 
@@ -10,8 +9,23 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 4,
+        length: 15,
         child: new Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            forceMaterialTransparency: true,
+            title: Row( 
+              children: [
+                Image.asset('assets/carTo.png'),
+                Text(
+              "CarpTO",
+              style: TextStyle(
+                color: Colors.black,
+              ),
+              ),
+              ]
+            ),
+          ),
           body: TabBarView(
             children: [
               new HomePage(),
