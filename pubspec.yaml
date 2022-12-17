@@ -23,10 +23,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  firebase_ui_auth: ^1.1.3
+    assets:
+      - assets/cartopng.png
   firebase_core: ^2.4.0
   firebase_auth: ^4.2.1
-  cloud_firestore: ^4.2.0
+  cloud_firestore: 4.0.1
   google_sign_in: ^5.4.2
   shared_preferences: ^2.0.15
   equatable: ^2.0.5

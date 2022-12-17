@@ -11,6 +11,21 @@ class Home extends StatelessWidget {
     return DefaultTabController(
         length: 4,
         child: new Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            forceMaterialTransparency: true,
+            title: Row( 
+              children: [
+                Image.asset('assets/carTo.png'),
+                Text(
+              "CarpTO",
+              style: TextStyle(
+                color: Colors.black,
+              ),
+              ),
+              ]
+            ),
+          ),
           body: TabBarView(
             children: [
               new HomePage(),
