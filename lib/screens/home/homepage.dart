@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
-import 'package:CarpApp/screens/home/post.dart'; //this link is wrong? 
+import 'package:carpto/screens/home/post.dart';
 
-void main() {
-  runApp(HomePage());
+/** 
+bvclass MyApp extends StatelessWidget{
+  //const MyApp({});
+
+  @override 
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: HomePage());}
 }
-
+*/
 class HomePage extends StatefulWidget {
 
   @override
@@ -63,7 +69,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   postComponent() {
-    return Container(
+
+     return 
+     InkWell(
+      child: Container(
       padding: const EdgeInsets.all(7),
       margin: const EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
@@ -189,13 +198,15 @@ class _HomePageState extends State<HomePage> {
 
           //Description box
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+           // mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(
                 padding: EdgeInsets.symmetric(vertical: 30, horizontal: 17),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.grey.shade300,
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.grey.shade300,
+                 
+                  
                 ),
                 //problem with description, text overflows and does
                 //not go onto the next line ... need to fix later
@@ -208,6 +219,61 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
+    ),
+    onTap: (){
+      //accept deny popup
+      showDialog(
+              context: context,
+              builder: (BuildContext context) => _buildPopupDialog(context),
+            );
+
+    },
     );
+
   }
+}
+
+_buildPopupDialog(BuildContext context){
+  return  AlertDialog(
+    shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(
+                20.0,
+              ),
+            ),
+          ),
+          contentPadding: EdgeInsets.only(
+            top: 10.0,
+          ),
+    content: Container(
+      height: 75,
+    child: Column(
+    children: <Widget>[
+    Container(
+                    width: double.infinity,
+                    height: 60,
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+
+                      onPressed: () {
+                        //add function of what happens after accept 
+                        //Navigator.of(context).pop();
+                      },
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.green,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),),
+                         
+                        // fixedSize: Size(250, 50),
+                      ),
+                      child: Text(
+                        "Accept",
+                      ),
+                    ),
+                  ),
+    
+    ]
+  ),),
+  );
+
 }
