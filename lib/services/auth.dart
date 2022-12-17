@@ -1,5 +1,5 @@
 import 'package:carpto/Models/userUid.dart';
-import 'package:carpto/services/fire_data.dart';
+import 'package:carpto/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -47,12 +47,12 @@ class AuthService{
   }
 
   //add email & password
-  Future registerWithEmailAndPassword(String email, String password, String name, String handle) async{
+  Future registerWithEmailAndPassword(String email, String password, String handle) async{
     try{
       auth.UserCredential result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
       auth.User? user = result.user;
-      DatabaseService db = DatabaseService(uid: result.user!.uid,email: user!.email??"");
-      await db.updateUser(email,handle,"");
+      //DatabaseService db = DatabaseService();
+      //await db.updateUser(handle, result.user!.uid, user!.email??"", "");
       return _userFromFirebaseUser(user);
     }catch(e){
       print(e.toString());
