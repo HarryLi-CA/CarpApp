@@ -2,7 +2,6 @@ import 'package:carpto/screens/home/homepage.dart';
 import 'package:carpto/screens/post/postpage.dart';
 import 'package:carpto/screens/profile/profilepage.dart';
 import 'package:carpto/screens/search/searchpage.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 

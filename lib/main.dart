@@ -2,6 +2,7 @@ import 'package:carpto/home.dart';
 import 'package:carpto/screens/signin/sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_ui_auth/firebase_ui_auth.dart' as auth;
 import 'package:flutter/material.dart';
 
 
@@ -22,12 +23,12 @@ class MyApp extends StatelessWidget {
         ),
           home: StreamBuilder<User?>(
           stream: FirebaseAuth.instance.authStateChanges(),
-          builder: ((context, snapshot) {
+          builder: (BuildContext context, snapshot) {
             if(snapshot.hasData){
-              return SignIn();
+              return Home();
             }
-            return Home();
-          })
+            return LoginPage();
+          }
         ),
       );
   }
